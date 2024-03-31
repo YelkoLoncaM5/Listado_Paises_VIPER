@@ -31,7 +31,7 @@ class ListaPaisesView: UIViewController {
         title = "Listado de Países"
         configurarTableView()
         configurarSearchController()
-        presenter.onViewAppear()
+        presenter.onViewDidLoad()
     }
     
     private func configurarTableView() {

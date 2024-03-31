@@ -73,7 +73,7 @@ class DetalleView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        presenter.onViewAppear()
+        presenter.onViewDidLoad()
     }
     
     func setupView() {

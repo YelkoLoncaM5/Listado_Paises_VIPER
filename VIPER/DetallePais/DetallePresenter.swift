@@ -12,7 +12,7 @@ protocol DetallePresentable: AnyObject {
     var interfazUsuario: DetallePresenterInterfazUsuario? { get }
     var paisName: String { get }
     
-    func onViewAppear()
+    func onViewDidLoad()
     
 }
 
@@ -34,7 +34,7 @@ class DetallePresenter: DetallePresentable{
         self.mapper = mapper
     }
     
-    func onViewAppear() {
+    func onViewDidLoad() {
         Task{
             let model = await interactor.getDetallePais(withName: paisName)
             let viewModel = mapper.map(entity: model!)

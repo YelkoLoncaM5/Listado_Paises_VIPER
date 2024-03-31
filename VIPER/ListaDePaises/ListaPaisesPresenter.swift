@@ -6,7 +6,7 @@ protocol ListaPaisesPresentable: AnyObject {
     var interfazUsuario: ListaPaisesInterfazUsuario? { get }
     var viewModels: [ViewModel] { get }
     
-    func onViewAppear()
+    func onViewDidLoad()
     func seleccionarCelda(atIndex: Int)
     func onSearch(with searchText: String)
     
@@ -38,7 +38,7 @@ class ListaPaisesPresenter: ListaPaisesPresentable {
         self.router = router
     }
     
-    func onViewAppear() {
+    func onViewDidLoad() {
         Task {
             models = await listaPaisesInteractor.getListaPaises()
             viewModels = models.map(mapper.map(entity:))
